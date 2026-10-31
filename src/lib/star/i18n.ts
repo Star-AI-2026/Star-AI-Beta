@@ -51,6 +51,10 @@ const fa: Record<string, string> = {
   "Color mode": "حالت رنگ",
   "Background intensity": "شدت پس‌زمینه",
   "Animations": "پویانمایی‌ها",
+  "Blur": "محو‌شدگی (Blur)",
+  "Enable background blur effects": "فعال‌سازی محوشدگی پس‌زمینه‌ها",
+  "Liquid Glass": "شیشه مایع (Liquid Glass)",
+  "Enable translucent liquid glass surfaces": "فعال‌سازی ظاهر شیشه‌ای و شفاف",
   "Particle effects": "جلوه‌های ذره‌ای",
   "Send with Enter": "ارسال با Enter",
   "Shift + Enter adds a new line": "Shift + Enter خط جدید ایجاد می‌کند",
@@ -233,6 +237,13 @@ export function useI18n() {
     document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
     document.body.dir = language === "fa" ? "rtl" : "ltr";
   }, [language]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.starAnimations = settings.animations ? "on" : "off";
+    root.dataset.starBlur = settings.blur ? "on" : "off";
+    root.dataset.starLiquidGlass = settings.liquidGlass ? "on" : "off";
+  }, [settings.animations, settings.blur, settings.liquidGlass]);
   const t = (value: string) => language === "fa" ? (fa[value] ?? value) : value;
   return { language, dir: language === "fa" ? "rtl" as const : "ltr" as const, t };
 }

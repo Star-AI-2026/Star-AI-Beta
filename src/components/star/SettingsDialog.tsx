@@ -184,6 +184,12 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
               <Row label={t("Animations")}>
                 <Toggle on={settings.animations} onChange={(v) => updateSettings({ animations: v })} />
               </Row>
+              <Row label={t("Blur")} hint={t("Enable background blur effects")}>
+                <Toggle on={settings.blur} onChange={(v) => updateSettings({ blur: v })} />
+              </Row>
+              <Row label={t("Liquid Glass")} hint={t("Enable translucent liquid glass surfaces")}>
+                <Toggle on={settings.liquidGlass} onChange={(v) => updateSettings({ liquidGlass: v })} />
+              </Row>
               <Row label={t("Particle effects")}>
                 <Toggle on={settings.particles} onChange={(v) => updateSettings({ particles: v })} />
               </Row>

@@ -67,6 +67,8 @@ export type Settings = {
   webSearch: boolean;
   colorMode: "dark" | "light" | "system";
   animations: boolean;
+  blur: boolean;
+  liquidGlass: boolean;
   particles: boolean;
   backgroundIntensity: number;
   streaming: boolean;
@@ -87,6 +89,8 @@ export const DEFAULT_SETTINGS: Settings = {
   webSearch: false,
   colorMode: "dark",
   animations: true,
+  blur: true,
+  liquidGlass: true,
   particles: true,
   backgroundIntensity: 70,
   streaming: true,
