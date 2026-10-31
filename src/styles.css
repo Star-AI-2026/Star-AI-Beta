@@ -597,3 +597,12 @@ html:not(.dark) {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Keep floating glass popovers out of document flow.
+   The Liquid Glass surface rule must not override Tailwind's absolute positioning. */
+:root[data-star-liquid-glass="on"] .glass.absolute {
+  position: absolute !important;
+  z-index: 50;
+  isolation: isolate;
+}
