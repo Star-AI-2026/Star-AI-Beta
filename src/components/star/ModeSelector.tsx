@@ -50,7 +50,7 @@ export function ModeSelector() {
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1.5 text-[11px] font-medium transition-colors hover:bg-secondary"
+        className="flex items-center gap-1.5 rounded-full border border-border/80 bg-background/35 px-2.5 py-1.5 text-[11px] font-medium shadow-sm backdrop-blur-xl transition-all duration-200 hover:border-accent/40 hover:bg-secondary/80 active:scale-[0.97]"
       >
         <Icon className="h-3.5 w-3.5 text-accent" />
         <span className="hidden sm:inline">{t(current.label)}</span>
@@ -60,7 +60,7 @@ export function ModeSelector() {
       {open && (
         <div
           role="listbox"
-          className="glass absolute bottom-full left-0 z-30 mb-2 w-56 overflow-hidden rounded-2xl p-1 shadow-glow"
+          className="glass absolute bottom-full left-0 z-30 mb-2 w-56 overflow-hidden rounded-[1.35rem] border border-white/15 p-1.5 shadow-glow"
         >
           {AI_MODES.map((m) => {
             const MIcon = ICONS[m.icon] ?? Sparkle;
@@ -74,7 +74,7 @@ export function ModeSelector() {
                   setOpen(false);
                 }}
                 className={cn(
-                  "flex w-full items-start gap-2 rounded-xl px-2.5 py-2 text-start transition-colors hover:bg-secondary",
+                  "flex w-full items-start gap-2 rounded-xl px-2.5 py-2 text-start transition-all duration-200 hover:translate-x-0.5 hover:bg-secondary active:scale-[0.99]",
                   m.id === mode && "bg-secondary",
                 )}
               >
