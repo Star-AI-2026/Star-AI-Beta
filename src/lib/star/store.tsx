@@ -300,6 +300,7 @@ export function StarProvider({ children }: { children: ReactNode }) {
             ...(settings.language && settings.language !== "auto"
               ? { language: settings.language }
               : {}),
+            uiLanguage: settings.uiLanguage,
             memories: settings.memoryEnabled ? memories.map((m) => m.text) : [],
             messages: history.map((m) => ({
               role: m.role,
