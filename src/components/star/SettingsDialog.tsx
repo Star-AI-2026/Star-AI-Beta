@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 const SECTIONS = [
   "General",
+  "Language",
   "Appearance",
   "AI",
   "Memory",
@@ -84,14 +85,14 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
                 section === s ? "bg-brand-gradient text-primary-foreground" : "hover:bg-secondary",
               )}
             >
-              {s}
+              {s === "Language" && settings.uiLanguage === "fa" ? "زبان" : s}
             </button>
           ))}
         </nav>
 
         <div className="scrollbar-thin flex-1 overflow-y-auto p-5">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-display text-lg font-semibold">{section}</h2>
+            <h2 className="font-display text-lg font-semibold">{section === "Language" && settings.uiLanguage === "fa" ? "زبان" : section}</h2>
             <button
               onClick={onClose}
               className="rounded-xl border border-border px-3 py-1.5 text-xs hover:bg-secondary"
@@ -102,17 +103,6 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
 
           {section === "General" && (
             <div>
-              <Row label={t("uiLanguage")} hint={settings.uiLanguage === "fa" ? "زبان منوها و دکمه‌های برنامه" : "Language for menus and controls"}>
-                <select
-                  value={settings.uiLanguage ?? "en"}
-                  onChange={(e) => updateSettings({ uiLanguage: e.target.value as "fa" | "en" })}
-                  className="rounded-xl border border-border bg-popover px-3 py-1.5 text-xs"
-                  aria-label={t("uiLanguage")}
-                >
-                  <option value="fa">{t("persian")}</option>
-                  <option value="en">{t("english")}</option>
-                </select>
-              </Row>
               <Row label={t("conversationsStored")} hint={t("savedOnDevice")}>
                 <span className="text-sm tabular-nums">{conversations.length}</span>
               </Row>
@@ -140,6 +130,25 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
                   aria-label="Assistant name"
                   className="w-40 rounded-xl border border-border bg-transparent px-3 py-1.5 text-xs outline-none"
                 />
+              </Row>
+            </div>
+          )}
+
+          {section === "Language" && (
+            <div>
+              <Row
+                label={t("uiLanguage")}
+                hint={settings.uiLanguage === "fa" ? "زبان منوها و دکمه‌های برنامه" : "Choose the language used throughout the app"}
+              >
+                <select
+                  value={settings.uiLanguage ?? "en"}
+                  onChange={(e) => updateSettings({ uiLanguage: e.target.value as "fa" | "en" })}
+                  className="min-w-32 rounded-xl border border-border bg-popover px-3 py-2 text-xs"
+                  aria-label={t("uiLanguage")}
+                >
+                  <option value="en">English</option>
+                  <option value="fa">فارسی</option>
+                </select>
               </Row>
             </div>
           )}
