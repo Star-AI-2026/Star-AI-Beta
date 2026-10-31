@@ -64,7 +64,7 @@ export function VersionSwitcher({ compact = false }: { compact?: boolean }) {
                       activeVersion ? "opacity-80" : "opacity-70",
                     )}
                   >
-                    {v.subtitle}
+                    {t(v.subtitle)}
                   </span>
                 )}
               </span>
@@ -95,7 +95,7 @@ export function VersionSwitcher({ compact = false }: { compact?: boolean }) {
                   </span>
                   {!compact && (
                     <span className="block truncate text-[10px] leading-tight opacity-70">
-                      {v.subtitle}
+                      {t(v.subtitle)}
                     </span>
                   )}
                 </span>

@@ -61,7 +61,7 @@ export function WelcomeScreen() {
           <span className="glass rounded-full px-3 py-1 font-medium">{t(meta.badge)}</span>
           {meta.advanced && (
             <span className="flex items-center gap-1 rounded-full bg-brand-gradient px-3 py-1 font-semibold text-primary-foreground shadow-glow">
-              <Zap className="h-3 w-3" /> Advanced Mode
+              <Zap className="h-3 w-3" /> {t("Advanced Mode")}
             </span>
           )}
         </div>
@@ -88,7 +88,7 @@ export function WelcomeScreen() {
 
       <div className="mt-8">
         <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          Try an example
+          {t("Try an example")}
         </p>
         <div className="flex flex-wrap gap-2">
           {meta.examples.map((ex) => (
@@ -97,7 +97,7 @@ export function WelcomeScreen() {
               onClick={() => void sendMessage(ex)}
               className="rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
-              {ex}
+              {t(ex)}
             </button>
           ))}
         </div>
@@ -109,7 +109,7 @@ export function WelcomeScreen() {
             key={c}
             className="rounded-full bg-secondary/60 px-2.5 py-1 text-[11px] text-muted-foreground"
           >
-            {c}
+            {t(c)}
           </span>
         ))}
       </div>
