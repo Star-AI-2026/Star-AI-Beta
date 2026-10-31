@@ -55,7 +55,7 @@ export function VersionMenu() {
         <div
           role="listbox"
           aria-label={t("Star-AI version")}
-          className="glass absolute bottom-full left-0 z-50 mb-2 max-h-[min(65vh,390px)] w-[min(270px,calc(100vw-32px))] overflow-y-auto rounded-[1.35rem] border border-white/15 p-1.5 shadow-glow animate-in fade-in zoom-in-95 slide-in-from-bottom-2 duration-200"
+          className="glass absolute right-0 top-full z-50 mt-2 max-h-[min(65vh,390px)] w-[min(270px,calc(100vw-32px))] overflow-y-auto rounded-[1.35rem] border border-white/15 p-1.5 shadow-glow animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200"
         >
           <p className="px-2.5 pb-1 pt-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{t("Available")}</p>
           {VERSION_CATALOG.filter((item) => item.enabled).map((item) => {

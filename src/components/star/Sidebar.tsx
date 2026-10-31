@@ -18,7 +18,6 @@ import {
 import { useMemo, useState } from "react";
 
 import { StarLogo } from "./StarLogo";
-import { VersionSwitcher } from "./VersionSwitcher";
 import { useAuth } from "@/lib/auth/AuthProvider";
 import { useStar } from "@/lib/star/store";
 import type { Conversation, SortMode } from "@/lib/star/types";
@@ -203,10 +202,6 @@ export function Sidebar({
             <X className="h-5 w-5" />
           </button>
         )}
-      </div>
-
-      <div className="px-3 pt-4">
-        <VersionSwitcher />
       </div>
 
       <div className="px-3 pt-3">

@@ -2,7 +2,6 @@ import { ArrowUp, FileText, Globe, ImageIcon, Mic, Paperclip, Sheet, Square, X }
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
-import { VersionMenu } from "./VersionMenu";
 import { VERSIONS } from "@/lib/ai/versions";
 import {
   ACCEPTED,
@@ -233,8 +232,6 @@ export function Composer() {
           >
             <Mic className={cn("h-4 w-4", dictation.listening && "animate-pulse")} />
           </button>
-
-          <VersionMenu />
 
           <button
             onClick={() => setWebSearch(!webSearch)}

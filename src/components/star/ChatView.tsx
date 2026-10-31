@@ -6,6 +6,7 @@ import { Composer } from "./Composer";
 import { MessageItem } from "./MessageItem";
 import { StarLogo } from "./StarLogo";
 import { WelcomeScreen } from "./WelcomeScreen";
+import { VersionMenu } from "./VersionMenu";
 import { MODE_MAP } from "@/lib/ai/modes";
 import { VERSIONS } from "@/lib/ai/versions";
 import { exportConversation } from "@/lib/star/export";
@@ -34,6 +35,7 @@ export function ChatView({ onOpenSidebar }: { onOpenSidebar: () => void }) {
         >
           <Menu className="h-4 w-4" />
         </button>
+        <VersionMenu />
         <StarLogo className="hidden h-6 w-6 text-primary md:block" animated={false} />
         <div className="min-w-0">
           <h1 className="truncate font-display text-sm font-semibold">
